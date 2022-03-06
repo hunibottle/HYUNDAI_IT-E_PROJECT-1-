@@ -1,20 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../header.jsp" %>  
 
 
-  <div id="front">   
     <h2> New Item</h2>     
     <div id="bestProduct">         
       <c:forEach items="${BoardList}"  var="BoardVO">
-        <div id="item">
-        	
+        <div id="item" style="width:100px; padding: 10px; display:inline-block; border:1px solid red; ">
+        	<img src="images/sub_img.jpg">
             <p>${BoardVO.shoesID}</p>
-            <h3> ${BoardVO.shoesName} </h3>    
+            <h3>${BoardVO.shoesName} </h3>    
             <p>${BoardVO.shoesValue} </p>
         </div>
       </c:forEach>      
     </div>
+    <div>
+    test
+    </div>
    <div class="clear"></div>
+   
+ 
   <!-- 
     <!DOCTYPE html>
 <html>
