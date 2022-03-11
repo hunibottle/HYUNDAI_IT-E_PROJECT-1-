@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+.logo {
+	width : 150;
+	height : 50;
+	float: left;
+    background-position: 0 0;
+    width: 150px;
+    height: 50px;
+    margin-left: 50;
+}
+
+body {
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: white;
+  font-family: 'Noto Sans CJK kr', 'Noto Sans KR', 'Jost', sans-serif;
+}
+
+.navbar a {
+  letter-spacing: -.25em;
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 16px 18px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  padding : 0 20 0 20;
+}
+
+.dropdown .dropbtn {
+
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: #666666;
+  letter-spacing: 0.1em;
+  padding: 18px 16px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+   color : black;
+   cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white; 
+  background-color: inherit;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content .header {
+  background: white;
+  padding: 16px;
+  color: #666666;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  background-color : white;
+  height: 250px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.column a:hover {
+  background-color: #ddd;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    height: auto;
+  }
+}
