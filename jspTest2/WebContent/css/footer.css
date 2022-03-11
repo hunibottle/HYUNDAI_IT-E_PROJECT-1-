@@ -1,0 +1,13 @@
+footer {
+  height : 200px;
+  text-align: center;
+  padding : 0 0 0 0;
+  background-color: black;
+  color: white;
+  margin-top:0;
+}
+ 
+hr{
+	color:#e7e7e7;
+	margin-bottom : 2px;
+}
