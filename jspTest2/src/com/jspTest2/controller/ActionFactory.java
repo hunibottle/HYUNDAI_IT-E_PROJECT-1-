@@ -1,9 +1,11 @@
+/*
+
 package com.jspTest2.controller;
 import com.jspTest2.controller.action.*;
 
 public class ActionFactory {
   private static ActionFactory instance = new ActionFactory();
-  private ActionFactory() { //?‹±ê¸??„´ ?Œ¨?„´
+  private ActionFactory() { //?ï¿½ï¿½ï¿½??ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
     super();  }
   public static ActionFactory getInstance() {
     return instance;
@@ -18,3 +20,5 @@ public class ActionFactory {
     return action;
   }
 }//end class
+
+*/

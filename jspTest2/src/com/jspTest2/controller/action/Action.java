@@ -1,3 +1,4 @@
+/*
 package com.jspTest2.controller.action;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,3 +10,5 @@ public interface Action {
 		 HttpServletResponse response)
             throws ServletException, IOException;
 }//end class
+
+*/

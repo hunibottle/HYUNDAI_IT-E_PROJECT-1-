@@ -1,12 +1,13 @@
 footer {
   height : 200px;
   text-align: center;
-  padding : 0 0 0 0;
+  padding : 50 0 0 0;
   background-color: black;
   color: white;
   margin-top:0;
+  font-size:18pt;
 }
- 
+
 hr{
 	color:#e7e7e7;
 	margin-bottom : 2px;
