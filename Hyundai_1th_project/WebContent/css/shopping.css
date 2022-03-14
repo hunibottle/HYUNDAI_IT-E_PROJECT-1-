@@ -1,0 +1,41 @@
+#sub_menu {
+	width: 250px;
+	float: left;
+	margin: 20px 0;
+    left: 30px;
+    margin-top: 100px;
+    position: relative;
+    margin-right: 31px;
+    height: 1200px;
+}
+
+#sub_menu ul {
+	margin: 20px 0 0 16px;
+	list-style: none;
+}
+
+#sub_menu a {
+	text-decoration: none;
+	color: black; 
+	font-family: 'Jost',sans-serif;
+	font-size:30px;
+	display: block;
+	height: 50px;
+	width: 250px;
+	padding: 7px;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+#sub_menu a:hover{
+	color: #666666;
+	font-weight:bold; 
+	font-size:31px;
+	font-family: 'Jost',sans-serif;
+}
+#sub_menu a.on{
+	color: #666666;
+	font-weight:bold; 
+	font-size:33px;
+	font-family: 'Jost',sans-serif;
+}
