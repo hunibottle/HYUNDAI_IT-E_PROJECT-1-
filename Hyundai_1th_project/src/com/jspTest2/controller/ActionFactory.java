@@ -16,20 +16,45 @@ public class ActionFactory {
       action = new IndexAction();
     } 
     else if(command.equals("product")){
-        action = new ProductAction();
-      } 
-    else if(command.equals("productbycatagory")) {
-    	action = new ProductCategoryAction();
-    }
-    else if(command.equals("productbyindex")) {
-    	action = new ProductIndexAction();
-    }
+        action = new AllBoardAction();
+      }
+    else if(command.equals("sneakers")){
+        action = new SneakersBoardAction();
+      }
+    else if(command.equals("clothes")){
+        action = new ClothesBoardAction();
+      }
     else if(command.equals("newsList")){
     	action = new NewsListAction();
-    }else if(command.equals("product_detail")) {
+    }
+    else if(command.equals("product_detail")) {
     	action = new ProductDetailAction();
-    }else if (command.equals("logout")) {
+    }
+    else if (command.equals("logout")) {
     	action = new LogoutAction();
+    }
+    else if(command.equals("cart_insert")) {
+    	action = new CartInsertAction();
+    }
+    else if(command.equals("cart_delete")) {
+    	action = new CartDeleteAction();
+    }
+    else if(command.equals("cart_list")) {
+    	action = new CartListAction();
+    }
+    else if(command.equals("order_list")) {
+    	action = new OrderListAction();
+    }
+    else if (command.equals("delete")) {
+    	action = new UserDeleteAction();
+    }
+    else if (command.equals("update")) {
+    	
+    	action = new UserUpdateAction();
+    }
+    else if (command.equals("confirmpwd")) {
+    	
+    	action = new ConfirmPwdAction();
     }
     return action;
   }

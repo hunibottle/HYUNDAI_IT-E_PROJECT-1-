@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jspTest2.dao.OrderDAO;
 import com.jspTest2.dao.ProductDAO;
 import com.jspTest2.dto.ProductVO;
 
@@ -19,6 +20,8 @@ public class ProductDetailAction implements Action {
 	    String product_number = request.getParameter("product_number").trim();  
 	    
 	    ProductDAO productDAO=ProductDAO.getInstance();
+	    OrderDAO orderDAO=OrderDAO.getInstance();
+	    
 	    ProductVO productVO= productDAO.getProduct(product_number);    
 	    
 	    request.setAttribute("productVO", productVO);    

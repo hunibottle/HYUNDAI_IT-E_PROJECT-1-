@@ -14,7 +14,7 @@
 				<h2>
 					Most Popular Sneakers
 					<button class="btn"
-						onClick="location.href='BoardServlet?command=product_detail'">See More!</button>
+						onClick="location.href='BoardServlet?command=product&index=1'">See More!</button>
 				</h2>
 
 			</div>
@@ -24,7 +24,7 @@
 					<c:forEach items="${ProductList}" var="ProductVO">
 						<!-- <button class = "btn2" onClick="'#'"> -->
 						<div class="css-3a"
-							style="width: 200px; padding: 20px; display: inline-block; border: 1px solid lightgrey; cursor: pointer,"
+							style="width: 200px; height: 187px; padding: 20px; display: inline-block; border: 1px solid lightgrey; cursor: pointer;"
 							onclick="location.href='BoardServlet?command=product_detail&product_number=${ProductVO.product_number}'">
 							<div id="image">
 								<img src="./images/${ProductVO.product_image}" alt=""

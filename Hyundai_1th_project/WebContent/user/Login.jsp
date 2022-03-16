@@ -2962,15 +2962,13 @@
         }
     </style>
     --->
-    <script src="https://cdn.megadata.co.kr/js/socialLink/social_sns_config_min.js" type="text/javascript" defer=""
-        async=""></script>
 </head>
 
 <body>
 <div id="bodyWrap" class="login">
     	<img class="logo" src="../images/biglogo.png" style="cursor:pointer;" onClick="location.href='http://localhost:8080/Hyundai_1th_project/'">	
         <h3 class="cnts_title"><span>로그인</span></h3>
-        <div class="sub_container">
+         <div class="sub_container">
             <div id="handsomeCust" class="login_wrap box_type_1 renewal1904">
                 <div class="border_box1">
            

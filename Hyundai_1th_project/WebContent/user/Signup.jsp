@@ -3003,7 +3003,7 @@
                                             
                                             <div>
                                                 <input type="text" id="j_password" name="user_phone"
-                                                    placeholder="전화번를 입력하세요." title="전화번">
+                                                    placeholder="전화번호를 입력하세요." title="전화번호 ">
                                             </div>                                           
                                             <div>
                                                 <input type="text" id="j_password" name="user_email"

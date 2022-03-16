@@ -12,6 +12,8 @@ public class ProductVO {
 	private String product_desc;
 	private Timestamp product_date;
 	private int product_hits;
+	private String product_name_2;
+	
 	
 	public int getProduct_number() {
 		return product_number;
@@ -69,6 +71,12 @@ public class ProductVO {
 	}
 	public void setProduct_image(String product_image) {
 		this.product_image = product_image;
+	}
+	public String getProduct_name_2() {
+		return product_name_2;
+	}
+	public void setProduct_name_2(String product_name_2) {
+		this.product_name_2 = product_name_2;
 	}
 	
 

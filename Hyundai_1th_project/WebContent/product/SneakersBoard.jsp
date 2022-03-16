@@ -11,40 +11,39 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="./css/board.css">
 <body>
-	<c:set value="${title}" var="title" />
 	<div class="page-body-wrapper">
 		<div class="hs-row box" style="height: 100px;">
 			<ol class="breadcrumb col-r">
 				<li class="breadcrumb-item"><a
 					href="BoardServlet?command=index">Home</a></li>
 				<li class="breadcrumb-item"><a class="breadcrumb-item-a"
-					href="BoardServlet?command=product">${title}</a></li>
+					href="BoardServlet?command=sneakers&index=1">Sneakers</a></li>
 			</ol>
 		</div>
 		<h2 class="hs-row tit_page tit-bg-none">
-			<span><em class="f_jost">${title}</em></span>
+			<span><em class="f_jost">Sneakers</em></span>
 		</h2>
 		<div class="section box topBr">
 			<div class="dropdown imgBoard_sort2">
 				<div class="dropdown-menu">
 					<ul class="dropdown-menu-ul">
-						<li><a href="BoardServlet?command=product"
+						<li><a href="BoardServlet?command=product&index=1"
 							class="dropdown-item" id="brand_All"> <span>ALL</span>
 						</a></li>
-						<li><a class="dropdown-item" id="brand_TH"
-							href="BoardServlet?command=productbycatagory&category_code=1">
+						<li><a class="dropdown-item on" id="brand_TH"
+							href="BoardServlet?command=sneakers&index=1">
 								<span>SNEAKERS</span>
 						</a></li>
 						<li><a class="dropdown-item"
-							href="BoardServlet?command=productbycatagory&category_code=2">
+							href="BoardServlet?command=clothes&index=1">
 								<span>CLOTHES</span>
 						</a></li>
 						<li><a class="dropdown-item"
-							href="BoardServlet?command=productbycatagory&category_code=3">
+							href="#none">
 								<span>BEAUTY</span>
 						</a></li>
 						<li><a class="dropdown-item"
-							href="BoardServlet?command=productbycatagory&category_code=4">
+							href="#none">
 								<span>ELECTRONICS</span>
 						</a></li>
 					</ul>
@@ -52,28 +51,50 @@
 			</div>
 			<nav id="sub_menu">
 				<ul class="sub_menu">
-						<li><a href="BoardServlet?command=productbycatagory&category_code=1">SNEAKERS</a></li>
-						<li><a href="BoardServlet?command=productbycatagory&category_code=2">CLOTHES</a></li>
-						<li><a href="BoardServlet?command=productbycatagory&category_code=3">BEAUTY</a></li>
-						<li><a href="BoardServlet?command=productbycatagory&category_code=4">ELECTRONICS</a></li>
+						<li><a class = "on" href="BoardServlet?command=product&index=1">SNEAKERS</a></li>
+						<li><a href="BoardServlet?command=clothes&index=1">CLOTHES</a></li>
+						<li><a href="#none">BEAUTY</a></li>
+						<li><a href="#none">ELECTRONICS</a></li>
 				</ul>
 
 			</nav>
 			<div class="contents" id="pl_main">
 				<div class="list-sort-area">
 					<div class="sortOption">
-						<a href="#none" class="active">최근등록순</a> <a href="#none">많이팔린순</a>
-						<a href="#none">낮은가격순</a> <a href="#none">높은가격순</a>
+						<c:set var="index" value="${index}"></c:set>
+						<c:if test="${index eq '1'}">
+							<a href="BoardServlet?command=sneakers&index=1" class="active">최근등록순</a> 
+							<a href="BoardServlet?command=sneakers&index=2">많이팔린순</a>
+							<a href="BoardServlet?command=sneakers&index=3">낮은가격순</a> 
+							<a href="BoardServlet?command=sneakers&index=4">높은가격순</a>
+						</c:if>
+						<c:if test="${index eq '2'}">
+							<a href="BoardServlet?command=sneakers&index=1">최근등록순</a> 
+							<a href="BoardServlet?command=sneakers&index=2" class="active">많이팔린순</a>
+							<a href="BoardServlet?command=sneakers&index=3">낮은가격순</a> 
+							<a href="BoardServlet?command=sneakers&index=4">높은가격순</a>
+						</c:if>
+						<c:if test="${index eq '3'}">
+							<a href="BoardServlet?command=sneakers&index=1">최근등록순</a> 
+							<a href="BoardServlet?command=sneakers&index=2">많이팔린순</a>
+							<a href="BoardServlet?command=sneakers&index=3" class="active">낮은가격순</a> 
+							<a href="BoardServlet?command=sneakers&index=4">높은가격순</a>
+						</c:if>
+						<c:if test="${index eq '4'}">
+							<a href="BoardServlet?command=sneakers&index=1">최근등록순</a> 
+							<a href="BoardServlet?command=sneakers&index=2">많이팔린순</a>
+							<a href="BoardServlet?command=sneakers&index=3">낮은가격순</a> 
+							<a href="BoardServlet?command=sneakers&index=4" class="active">높은가격순</a>
+						</c:if>
 					</div>
 				</div>
 				<div class="pdlist-wrap">
 					<ul>
 						<c:forEach items="${ProductList}" var="ProductVO">
-							<c:forEach var="cnt" begin="1" end="4">
-								<li class="pdthumb"><a href="#none"
-									style="color: #333; display: block; vertical-align: middle; cursor: pointer;">
+								<li class="pdthumb">
+								<a href="BoardServlet?command=product_detail&product_number=${ProductVO.product_number}" style="color: #333; display: block; vertical-align: middle; cursor: pointer;">
 										<div class="thumb">
-											<img src="images/shoes${cnt}.jpg">
+											<img src="images/${ProductVO.product_image}">
 										</div>
 										<div class="figcaption">
 											<div class="pdname">${ProductVO.product_name}</div>
@@ -94,7 +115,6 @@
 										</div> <!-- end figcaption -->
 
 								</a></li>
-							</c:forEach>
 						</c:forEach>
 					</ul>
 				</div>
@@ -104,7 +124,6 @@
 		</div>
 	</div>
 	<script>
-		
 	</script>
 </body>
 </html>

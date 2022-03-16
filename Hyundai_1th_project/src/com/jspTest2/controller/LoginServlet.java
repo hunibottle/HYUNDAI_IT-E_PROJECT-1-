@@ -51,7 +51,7 @@ public class LoginServlet <script> extends HttpServlet {
 			session.setAttribute("login.id",user_id);
 			session.setAttribute("login.pwd",user_pwd);
 			out.print(" "+user_id);
-			out.println("<script>alert('.');</script>");
+			out.println("<script>alert('o');</script>");
 			
 			response.sendRedirect("http://localhost:8080/Hyundai_1th_project/BoardServlet?command=index");
 		    return;

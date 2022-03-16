@@ -3,10 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href ="./css/index.css">
 <%@ include file="./header.jsp"%>
-<%@ include file="../slideshow/SlideShow.html"%>
-<%
-	session = request.getSession();
-%>
+<%@ include file="./slideshow/SlideShow.html"%>
+
 <div class="page-body-wrapper">
 	
 	<div id="section1" class="section box-overspill with-bg main_global">
@@ -40,8 +38,9 @@
 		<div class="section box">
 			<h2 class><span class="eng">WHAT'S NEW</span></h2>
 			<h2 class><span class="eng">AT HANDSOME X StockH</span></h2>
+			
 			<div class="hs-row">
-				<div class="col-md">
+				<div class="col-md" onclick="location.href='BoardServlet?command=news_detail&newsnumber=1'">
 					<dl>
 						<dt>	
 							<img src="./images/handsomeNews1.jpg" alt width="441" height="270">
@@ -69,6 +68,7 @@
 					</dl>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 </div>
@@ -76,4 +76,4 @@
 <div>
 <%@ include file="../product/ProductBestBoard.jsp"%>
 </div>
-<%@ include file="../footer.jsp"%>
+<%@ include file="./footer.jsp"%>
