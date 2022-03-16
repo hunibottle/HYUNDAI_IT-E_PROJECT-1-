@@ -2986,7 +2986,7 @@
          <li><a href="UserUpdate.jsp" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">회원정보변경</a></li>
          <li><a href="UserDelete.jsp" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">회원정보삭제</a></li>
          <li><a href="../BoardServlet?command=orderList" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">구매내역조회</a></li>
-         <li><a href="#" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">판매내역조회</a></li>
+         <li><a href="../BoardServlet?command=resell_list" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">판매희망조회</a></li>
       </ul>
    </nav>
 </div>
@@ -3043,7 +3043,7 @@
                                                 <input type="text" id="j_password" name="user_email"
                                                     placeholder="이메일을 입력하세요." title="이메일">
                                             </div>                                                                   
-                       						 <button type = "submit" class="loginbtn"> Sign up</button>
+                       						 <button type = "submit" class="loginbtn">회원정보수정</button>
                                               
                                         </div>                               
                                     </div>
@@ -3066,9 +3066,5 @@
 </body>
 
 </html>
-
-
-
-<%@ include file="../footer.jsp"%>
 
 

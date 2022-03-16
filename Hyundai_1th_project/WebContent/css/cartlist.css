@@ -280,7 +280,6 @@ input, textarea, button, select {
 
 .pt_list_all {
     position: relative;
-    padding-left: 120px;
     min-height: 100px;
     overflow: hidden;
 }

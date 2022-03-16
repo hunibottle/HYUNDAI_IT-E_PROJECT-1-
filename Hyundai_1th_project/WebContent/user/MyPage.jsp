@@ -2983,10 +2983,10 @@
         <h3 class="cnts_title"><span  style =" padding-right: 140px;">마이페이지</span></h3>
         <nav id="sub_menu" style="width:300px; margin-top:-25px;">
       <ul class="sub_menu" style ="font-family: "맑은 고딕", "Malgun Gothic", "돋움", Dotum, Helvetica, Arial, Sans-serif;">
-         <li><a href="UserUpdate.jsp" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">회원정보변경</a></li>
-         <li><a href="UserDelete.jsp" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">회원정보삭제</a></li>
+         <li><a href="../UserUpdate.jsp" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">회원정보변경</a></li>
+         <li><a href="./UserDelete.jsp" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">회원정보삭제</a></li>
          <li><a href="../BoardServlet?command=order_list" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">구매내역조회</a></li>
-         <li><a href="#none" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">판매내역조회</a></li>
+         <li><a href="../BoardServlet?command=resell_list" style="border-bottom: 1px solid #c4c4c4; letter-spacing: -1px; font-size: 20px;  width: 140px;">판매희망조회</a></li>
       </ul>
    </nav>
    <div class="content mypage_sub01_01">
@@ -3049,7 +3049,5 @@
 </html>
 
 
-
-<%@ include file="../footer.jsp"%>
 
 

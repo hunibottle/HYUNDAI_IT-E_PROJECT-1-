@@ -14,17 +14,17 @@ public class CartDeleteAction implements Action {
 	      throws ServletException, IOException {
 		  
 	    String url = "BoardServlet?command=cart_list";
-//	    String[] cseqArr = request.getParameterValues("cseq");  
-	    // í•œê°œ ì´ìƒ ì²´í¬ ì‹œ ì²˜ë¦¬ 
-	    String cseq = request.getParameter("cseq").trim();
-	    System.out.println(cseq);
-	    CartDAO cartDAO = CartDAO.getInstance();
-	    cartDAO.deleteCart(Integer.parseInt(cseq));
-//	    for(String cseq:cseqArr){ //í•œê°œ ì´ìƒì˜ ë¬¼ê±´ì˜ ì¥ë°”êµ¬ë‹ˆì—ì„œ ì§€ìš°ê¸° ë•Œë¬¸
-//	      System.out.println(cseq);
-//	      CartDAO cartDAO = CartDAO.getInstance();
-//	      cartDAO.deleteCart(Integer.parseInt(cseq));
-//	    }
+	    String[] cseqArr = request.getParameterValues("cseq");  
+	     
+	    //String cseq = request.getParameter("cseq").trim();
+	    
+//	    CartDAO cartDAO = CartDAO.getInstance();
+//	    cartDAO.deleteCart(Integer.parseInt(cseq));
+	    for(String cseq:cseqArr){ //ÇÑ°³ ÀÌ»óÀÇ ¹°°ÇÀÇ Àå¹Ù±¸´Ï¿¡¼­ Áö¿ì±â ¶§¹®
+	      System.out.println(cseq);
+	      CartDAO cartDAO = CartDAO.getInstance();
+	      cartDAO.deleteCart(Integer.parseInt(cseq));
+	    }
 	    request.getRequestDispatcher(url).forward(request, response);
 	  }
-	}//end class
+}//end class

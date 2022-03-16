@@ -2,6 +2,7 @@ package com.jspTest2.dao;
 
 import java.util.ArrayList;
 
+import com.jspTest2.dto.MemberVO;
 import com.jspTest2.dto.OrderVO;
 
 import java.sql.Connection;
@@ -37,7 +38,7 @@ public class OrderDAO {
 		    	OrderVO orderVO = new OrderVO();
 		    	orderVO.setOrder_number(rs.getInt("order_number"));
 		    	orderVO.setOrder_date(rs.getDate("order_date"));
-		    	orderVO.setProduct_name(rs.getString("product_number"));
+		    	orderVO.setProduct_name(rs.getString("product_name"));
 		    	orderVO.setProduct_quantity(rs.getInt("product_quantity"));
 		    	orderVO.setProduct_price(rs.getInt("product_price"));
 		    	orderList.add(orderVO);
@@ -50,6 +51,54 @@ public class OrderDAO {
 		    return orderList;
 	  }
 	  
+	  public OrderVO getMemberForOrder(String user_id) {
+		  	OrderVO orderVO = new OrderVO();
+			String query = "select  user_name, user_phone, user_address from user_address_view where user_id = ?";
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(query);
+				pstmt.setString(1, user_id);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+				orderVO.setReceiver_name(rs.getString("user_name"));
+				orderVO.setReceiver_phone(rs.getString("user_phone"));
+				orderVO.setAddress(rs.getString("user_address"));
+				}
+			}catch (Exception e) {
+				
+				e.printStackTrace();
+				
+			 }finally {
+				 DBManager.close(conn, pstmt, rs);
+			 } 
+				 
+			return orderVO;
+		}
+	  
+	  public OrderVO getProductForOrder(int cseq) {
+		  	OrderVO orderVO = new OrderVO();
+			String query = "select  quantity, product_number, product_price, product_name from CART_PRODUCT_VIEW where cseq = ?";
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(query);
+				pstmt.setInt(1, cseq);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+				orderVO.setProduct_quantity(rs.getInt("quantity"));
+				orderVO.setProduct_number(rs.getInt("product_number"));
+				orderVO.setProduct_price(rs.getInt("product_price"));
+				orderVO.setProduct_name(rs.getString("product_name"));
+				}
+			}catch (Exception e) {
+				
+				e.printStackTrace();
+				
+			 }finally {
+				 DBManager.close(conn, pstmt, rs);
+			 } 
+				 
+			return orderVO;
+		}
 	  
 	  public int insertOrder(OrderVO orderVO) {
 		   int result = 0;

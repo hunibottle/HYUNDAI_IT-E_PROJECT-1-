@@ -20,7 +20,7 @@
 	<img class="logo" src="./images/biglogo.png" style="cursor:pointer;" onClick="location.href='http://localhost:8080/Hyundai_1th_project/'">	
         <h3 class="cnts_title"><!-- <span  style =" padding-right: 10px;">마이페이지</span> --></h3>
 	<h3 class="cnts_title cnts_tlt1807">
-		<span>구매 내역 조회</span>
+		<span>Resell 희망 내역</span>
 	</h3>
 	<span id="shoppingbagCartView">
 		<div class="sub_container">
@@ -39,52 +39,37 @@
 					<table class="tbl_ltype">
 							<colgroup>
 								<col style="witdh: 80px">
-								<col style="witdh: 100px;">
 								<col style="witdh: 105px;">
-								<col style="witdh: 100px;">
 								<col style="witdh: 100px;">
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col">구매 날짜</th>
-									<th scope="col">구매 번호</th>
-									<th scope="col">상품정보</th>
-									<th scope="col">수량</th>
-									<th scope="col">구매가</th>
+									<th scope="col">판매 번호</th>
+									<th scope="col">상품이름</th>
+									<th scope="col">희망판매가</th>
 								
 								</tr>
 							</thead>
 							<tbody>
-							<c:forEach items="${orderList}" var="OrderVO">
+							<c:forEach items="${ResellProductList}" var="ResellVO">
 								<tr name="entryProductInfo">
 									
-									
 									<td class="al_middle">
 										<span class="sb_tlt">
-											${OrderVO.order_date}
-										</span>
-									</td>
-									<td class="al_middle">
-										<span class="sb_tlt">
-											${OrderVO.order_number}
+											${ResellVO.resell_number}
 										</span>
 									</td>
 									<td class="pt_list_wrap">
 										<div class="pt_list_all">
 											
 											<div class="tit_wrap">
-											<span class="tlt">${OrderVO.product_name}</span>
+											<span class="tlt">${ResellVO.product_name}</span>
 										</div>
 										</div>
-									</td>
-									<td class="al_middle">
-										<span class="sb_tlt">
-											${OrderVO.product_quantity}
-										</span>
 									</td>
 									<td class="al_middle">
 										<div class="price_wrap">
-											<span>₩${OrderVO.product_quantity * OrderVO.product_price}</span>
+											<span>₩${ResellVO.product_price}</span>
 											
 										</div>
 									</td>

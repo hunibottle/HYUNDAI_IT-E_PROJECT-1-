@@ -48,11 +48,8 @@ public class MemberDAO {
 		return result;
 	}
 	
-
+	
 	public int addMember(MemberVO memberVO) {
-
-		
-	;
 	
 	String query = "insert into member(user_id, user_pwd, user_name, user_phone, user_email)"
     		+ "values(?, ?, ?, ?, ?) ";

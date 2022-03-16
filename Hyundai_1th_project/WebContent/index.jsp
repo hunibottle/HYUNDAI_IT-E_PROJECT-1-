@@ -5,6 +5,7 @@
 <%@ include file="./header.jsp"%>
 <%@ include file="./slideshow/SlideShow.html"%>
 
+
 <div class="page-body-wrapper">
 	
 	<div id="section1" class="section box-overspill with-bg main_global">
@@ -74,6 +75,7 @@
 </div>
 
 <div>
+<%@ include file="../product/BestResellBoard.jsp"%>
 <%@ include file="../product/ProductBestBoard.jsp"%>
 </div>
 <%@ include file="./footer.jsp"%>

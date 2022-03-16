@@ -28,12 +28,12 @@ public class CartInsertAction implements Action {
 	    String product_name = request.getParameter("product_name");
 //	    int quantity = Integer.parseInt(request.getParameter("quantity"));
 	    System.out.println("test");
-	    String quantity = request.getParameter("quantity").trim();
+	    String quantity = request.getParameter("cart_quantity").trim();
 	    System.out.println(quantity);
 	    if (user_id == null) {
-	      url = "/user/login"; //비회원인 경우
+	      url = "./user/Login.jsp"; 
 	    } else {
-	    	 System.out.println("else 문 실행 !!" + user_id);
+	    	 System.out.println("else !!" + user_id);
 	    	 System.out.println(url);
 	    	 
 	      CartVO cartVO = new CartVO();

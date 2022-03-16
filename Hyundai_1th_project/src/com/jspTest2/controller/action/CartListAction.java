@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.jspTest2.dao.CartDAO;
+import com.jspTest2.dao.OrderDAO;
 import com.jspTest2.dto.CartVO;
 import com.jspTest2.dto.MemberVO;
+import com.jspTest2.dto.OrderVO;
 
 public class CartListAction implements Action {
 	  @Override
@@ -23,20 +25,20 @@ public class CartListAction implements Action {
 	    String user_id = (String) session.getAttribute("login.id");
 	    System.out.println(user_id+"list");
 	    if (user_id == null) {
-	      url = "/user/login";
+	      url = "./user/Login.jsp";
 	    } else {
 	      CartDAO cartDAO = CartDAO.getInstance();
+	      OrderDAO orderDAO = OrderDAO.getInstance();
 	      ArrayList<CartVO> cartList = cartDAO.listCart(user_id);
-
+	      OrderVO orderVO = orderDAO.getMemberForOrder(user_id);
 	      int totalPrice = 0;
 	      for (CartVO cartVO : cartList) {
 	    	  System.out.println(cartVO.getCseq());
 	        totalPrice += cartVO.getProduct_price() * cartVO.getQuantity();
 	      }
-
+	      request.setAttribute("OrderVO", orderVO);
 	      request.setAttribute("cartList", cartList);
 	      request.setAttribute("totalPrice", totalPrice);
-	      System.out.print(totalPrice);
 	    }
 	    request.getRequestDispatcher(url).forward(request, response);
 	  }

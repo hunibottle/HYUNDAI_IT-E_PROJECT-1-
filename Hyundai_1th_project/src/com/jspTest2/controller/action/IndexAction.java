@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jspTest2.dao.ProductDAO;
+import com.jspTest2.dao.ResellDAO;
 import com.jspTest2.dto.ProductVO;
+import com.jspTest2.dto.ResellVO;
 
 
 public class IndexAction implements Action {
@@ -20,9 +22,11 @@ public class IndexAction implements Action {
 		String url = "./index.jsp";	    
 	
 	    ProductDAO productDAO = ProductDAO.getInstance();
+	    ResellDAO resellDAO = ResellDAO.getInstance();
+	    ArrayList<ResellVO> newResellProductList = resellDAO.listBestResellProduct();
 	    ArrayList<ProductVO> newProductList = productDAO.listBestProduct();
 	    request.setAttribute("ProductList", newProductList);
-	    
+	    request.setAttribute("ResellProductList", newResellProductList);
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 	    dispatcher.forward(request, response);
 	}

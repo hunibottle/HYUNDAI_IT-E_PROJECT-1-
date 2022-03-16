@@ -8,31 +8,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.jspTest2.dao.OrderDAO;
-import com.jspTest2.dto.OrderVO;
+import com.jspTest2.dao.ResellDAO;
+import com.jspTest2.dto.ResellVO;
 
-public class OrderListAction implements Action {
+public class ResellListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String url = "./mypage/OrderList.jsp";
+		String url = "./mypage/ResellList.jsp";
 		   
 	    HttpSession session = request.getSession();
-	    System.out.println(session+"OrderListAction");
 	    String user_id = (String) session.getAttribute("login.id");
-	    System.out.println(user_id+"list");
 	    if (user_id == null) {
-	      url = "/user/login";
+	      url = "./user/Login.jsp";
 	    } else {
-	    	OrderDAO orderDAO = OrderDAO.getInstance();
-	    	
-	      ArrayList<OrderVO> orderList = orderDAO.listOrder(user_id);
-	      request.setAttribute("orderList", orderList); 
+	      ResellDAO resellDAO = ResellDAO.getInstance();
+	      ArrayList<ResellVO> resellList = resellDAO.listResellProduct(user_id);
 	      
+	      request.setAttribute("ResellProductList", resellList);
 	    }
 	    request.getRequestDispatcher(url).forward(request, response);
-
 	}
-
 }

@@ -3033,6 +3033,4 @@
 
 
 
-<%@ include file="../footer.jsp"%>
-
 
